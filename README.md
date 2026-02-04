@@ -9,40 +9,24 @@ The model is trained on paired datasets of distorted images and their correspond
 
 A Streamlit-based user interface is developed to make the model easy to use. Users can upload a distorted image through the UI, and the trained model restores it in real time and displays the output image.
 
-This system can be applied to:
-
+**This system can be applied to**:
 * Digital art restoration
-
 * Old photograph enhancement
-
 * Museum and archival image preservation
-
 * Damage and noise removal in scanned artworks
 
-Key Features
-
+**Key Features**
 * Spatial Transformer for geometric correction
-
 * U-Net for image restoration
-
 * Perceptual loss using VGG16 for visual quality
-
 * Mixed precision training for faster performance
-
 * Checkpoint-based training recovery
-
 * Streamlit web interface for easy usage
 
-Technologies Used
-
+**Technologies Used**
 * Python
-
 * PyTorch
-
 * OpenCV
-
 * Torchvision
-
 * Streamlit
-
-CUDA (for GPU acceleration)
+* CUDA (for GPU acceleration)
