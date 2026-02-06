@@ -1,10 +1,32 @@
 import torch
 import cv2
 from torchvision import transforms
-from scriptv1 import RestorationUNet
+from models import RestorationUNet
 import streamlit as st
 from PIL import Image
 import numpy as np
+
+
+
+import cv2
+import numpy as np
+
+def unsharp_mask(image, amount=1.0, radius=1.0, threshold=0):
+    """
+    image: PIL Image or numpy array (RGB)
+    """
+    if not isinstance(image, np.ndarray):
+        image = np.array(image)
+
+    blurred = cv2.GaussianBlur(image, (0, 0), radius)
+    sharpened = cv2.addWeighted(image, 1 + amount, blurred, -amount, 0)
+
+    if threshold > 0:
+        low_contrast_mask = np.abs(image - blurred) < threshold
+        sharpened[low_contrast_mask] = image[low_contrast_mask]
+
+    return sharpened
+
 
 # Function to load the saved model
 def load_model(gpu_model_path):
@@ -49,7 +71,7 @@ def restore_image(model, distorted_img_path, transform, device):
 
     # Remove batch dimension and move to CPU
     restored_img = restored_img.squeeze(0).cpu()
-
+    
     # Convert to PIL image for displaying
     restored_img = transforms.ToPILImage()(restored_img)  
     return restored_img
@@ -66,6 +88,10 @@ st.title("AI Art Restoration Model")
 st.write("Upload a distorted image, and the model will restore it.")
 gpu_model_path = "(og)restoration_unet.pth"
 # Upload the model file
+def post_process(image):
+    image = unsharp_mask(image, amount=0.7, radius=1.1)
+    image = cv2.convertScaleAbs(image, alpha=1.05, beta=2)
+    return image
 
 # Upload the distorted image
 uploaded_file = st.file_uploader("Choose a distorted image...", type=["jpg", "jpeg", "png"])
@@ -87,7 +113,9 @@ if uploaded_file is not None:
 
     # Show the restored image
     if restored_img:
-        st.image(restored_img, caption='Restored Image', use_column_width=True)
+        post = post_process(restored_img)
+        sharpened = unsharp_mask(post, amount=0.7, radius=0.9)
+        st.image(post, caption='Restored Image', use_column_width=True)
         # Optionally, save the image
         save_option = st.checkbox("Save restored image?")
         if save_option:
