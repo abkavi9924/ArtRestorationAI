@@ -39,4 +39,8 @@ Step 1: Download the pretrained weight from the link above.
 
 Step 2: Download the app.py file.
 
-Step 3: Change the location 
+Step 3: Change the location gpu_model with the location of the file saved.
+
+Step 4: Run app.py
+
+**Note: Also Download scriptv1.py as helper functions from this files are being called in app.py**
