@@ -32,3 +32,11 @@ A Streamlit-based user interface is developed to make the model easy to use. Use
 * CUDA (for GPU acceleration)
 
 #PRE TRAINED MODEL LINK: https://drive.google.com/file/d/1_FJnB5zH128J6QmRX-iMf5pYLHiKkJhl/view?usp=sharing
+
+How to run:
+
+Step 1: Download the pretrained weight from the link above.
+
+Step 2: Download the app.py file.
+
+Step 3: Change the location 
