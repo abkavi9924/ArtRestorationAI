@@ -1,19 +1,19 @@
 # ArtRestorationAI
-Deep learning–based art restoration system using Spatial Transformer and U-Net. Trained on paired distorted and clear images with pixel-wise and perceptual (VGG16) loss. Includes a Streamlit UI to upload damaged images and generate restored outputs in real time.
 
-This project focuses on restoring distorted or damaged images using a deep learning–based image restoration system. The model is trained to convert low-quality, noisy, or damaged artwork images into visually clear and high-quality restored versions.
+## One Line Value Proposition
+Restores damaged artwork and photos into high quality images using Python + ML; deployable via Streamlit.
 
-The system uses a Spatial Transformer Network (STN) combined with a U-Net architecture to automatically align, correct color distortions, and reconstruct missing or degraded visual details. A perceptual loss function based on VGG16 is used along with pixel-wise loss to ensure that restored images are not only accurate at pixel level but also visually realistic.
-
-The model is trained on paired datasets of distorted images and their corresponding clear images. During training, mixed-precision computation and checkpointing are used to optimize memory usage and improve performance. Early stopping and learning rate scheduling are applied to prevent overfitting and improve convergence.
-
-A Streamlit-based user interface is developed to make the model easy to use. Users can upload a distorted image through the UI, and the trained model restores it in real time and displays the output image.
+## What problem this solves
+Manual art restoration is slow and expensive, this project automates the initial steps and work as an assitant to get a view of full restored image.
 
 Demo:
 <img width="1867" height="838" alt="image" src="https://github.com/user-attachments/assets/5e6e550b-ffc7-4c70-8991-6b78b24dc7c3" />
 
 <img width="857" height="753" alt="image" src="https://github.com/user-attachments/assets/e4ab414d-54b4-4f05-b4b9-a39725474318" />
 
+<img width="891" height="776" alt="image" src="https://github.com/user-attachments/assets/994a3d8d-ee66-4c11-a8f4-43b4bd885c0a" />
+
+<img width="861" height="746" alt="image" src="https://github.com/user-attachments/assets/93e98663-851b-4dd9-9438-aa9c770253b4" />
 
 
 **This system can be applied to**:
@@ -41,14 +41,16 @@ Demo:
 
 #PRE TRAINED MODEL LINK: https://drive.google.com/file/d/1_FJnB5zH128J6QmRX-iMf5pYLHiKkJhl/view?usp=sharing
 
-How to run:
+How to run(3 minutes max):
 
 Step 1: Download the pretrained weight from the link above.
 
-Step 2: Download the app.py file.
+Step 2: Download the app.py & models.py file.
 
-Step 3: Change the location gpu_model with the location of the file saved.
+Step 3: Install deps
 
-Step 4: Run app.py
+Step 4: Change the location gpu_model with the location of the file saved.
 
-**Note: Also Download scriptv1.py as helper functions from this files are being called in app.py**
+Step 5: Run app.py using **streamlit run app.py**
+
+**Note: Also Download models.py as helper functions from this files are being called in app.py**
