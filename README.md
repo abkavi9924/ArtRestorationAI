@@ -30,6 +30,7 @@ A Streamlit-based user interface is developed to make the model easy to use. Use
 * Torchvision
 * Streamlit
 * CUDA (for GPU acceleration)
+* Dataset used: https://www.kaggle.com/datasets/sankarmechengg/art-images-clear-and-distorted
 
 #PRE TRAINED MODEL LINK: https://drive.google.com/file/d/1_FJnB5zH128J6QmRX-iMf5pYLHiKkJhl/view?usp=sharing
 
