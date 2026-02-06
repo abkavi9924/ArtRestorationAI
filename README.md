@@ -9,6 +9,12 @@ The model is trained on paired datasets of distorted images and their correspond
 
 A Streamlit-based user interface is developed to make the model easy to use. Users can upload a distorted image through the UI, and the trained model restores it in real time and displays the output image.
 
+Demo:
+<img width="1867" height="838" alt="image" src="https://github.com/user-attachments/assets/5e6e550b-ffc7-4c70-8991-6b78b24dc7c3" />
+
+<img width="1171" height="713" alt="image" src="https://github.com/user-attachments/assets/b547a56c-01ee-463f-8bf4-1880bdd03893" />
+
+
 **This system can be applied to**:
 * Digital art restoration
 * Old photograph enhancement
