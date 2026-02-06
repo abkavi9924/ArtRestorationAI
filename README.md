@@ -12,7 +12,8 @@ A Streamlit-based user interface is developed to make the model easy to use. Use
 Demo:
 <img width="1867" height="838" alt="image" src="https://github.com/user-attachments/assets/5e6e550b-ffc7-4c70-8991-6b78b24dc7c3" />
 
-<img width="1171" height="713" alt="image" src="https://github.com/user-attachments/assets/b547a56c-01ee-463f-8bf4-1880bdd03893" />
+<img width="857" height="753" alt="image" src="https://github.com/user-attachments/assets/e4ab414d-54b4-4f05-b4b9-a39725474318" />
+
 
 
 **This system can be applied to**:
